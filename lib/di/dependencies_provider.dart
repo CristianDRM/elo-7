@@ -1,3 +1,4 @@
+import 'package:connectivity/connectivity.dart';
 import 'package:elo_7/components/boundaries/availability/availability_interactor.dart';
 import 'package:elo_7/components/boundaries/availability/availability_output_boundary_contract.dart';
 import 'package:elo_7/components/boundaries/product/products_interactor.dart';
@@ -25,8 +26,11 @@ class DependenciesProvider extends DependenciesProviderContract {
 
   @override
   Widget search(Widget child) {
+    final Connectivity _connectivity = Connectivity();
     final AvailabilityInteractor availabilityInteractor =
-        AvailabilityInteractor();
+        AvailabilityInteractor(
+      onConnectivityChanged: _connectivity.onConnectivityChanged,
+    );
     final ProductsInteractor interactor = ProductsInteractor(gateway: _gateway);
 
     availabilityInteractor.observeInternetAvailability
