@@ -28,7 +28,6 @@ class App extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
-      initialRoute: '/',
       theme: theme,
       localizationsDelegates: [
         i18n,

@@ -14,9 +14,9 @@ class RoutesHandler {
         initialRoute: '/',
         onGenerateRoute: (RouteSettings settings) {
           WidgetBuilder builder;
-          if (settings.name == '/s') {
+          if (settings.name == '/') {
             builder = (_) => dependeciesProvider.home(HomePage());
-          } else if (settings.name == '/') {
+          } else if (settings.name == '/search') {
             builder = (_) => dependeciesProvider.search(ProductsSearchPage());
           }
           return MaterialPageRoute(builder: builder, settings: settings);
