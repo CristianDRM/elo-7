@@ -9,7 +9,6 @@ class ProductsResultInfoViewBloc {
         _boundary = boundary;
   final ProductsOutputBoundaryContract _boundary;
 
-  Stream<int> get observeCountOfProducts => _boundary
-      .observeProducts()
+  Stream<int> get observeCountOfProducts => _boundary.observeProducts
       .flatMap((products) => Stream.value(products.length));
 }

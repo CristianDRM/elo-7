@@ -29,7 +29,10 @@ class TestableWidget extends StatelessWidget {
       home: LayoutTheme(
         child: RepaintBoundary(
           child: Directionality(
-            child: TickerMode(enabled: false, child: child),
+            child: TickerMode(
+              enabled: false,
+              child: ClipRect(child: child),
+            ),
             textDirection: TextDirection.ltr,
           ),
         ),

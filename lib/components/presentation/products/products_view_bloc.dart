@@ -10,18 +10,18 @@ class ProductsViewBloc {
   final ProductsOutputBoundaryContract _boundary;
 
   Stream<Iterable<ProductViewModel>> get observeProducts =>
-      _boundary.observeProducts().map(
-            (products) => products.map(
-              (product) => ProductViewModel(
-                picture: product.picture,
-                priceWithDiscount: product.price.promotional,
-                installment: product.price.installment,
-                hasDiscount: product.price.promotional != null,
-                hasInstallment: product.price.installment != null,
-                price: product.price.current,
-                title: product.title,
-                detailUrl: product.link,
-              ),
-            ),
-          );
+      _boundary.observeProducts.map(
+        (products) => products.map(
+          (product) => ProductViewModel(
+            picture: product.picture,
+            priceWithDiscount: product.price.promotional,
+            installment: product.price.installment,
+            hasDiscount: product.price.promotional != null,
+            hasInstallment: product.price.installment != null,
+            price: product.price.current,
+            title: product.title,
+            detailUrl: product.link,
+          ),
+        ),
+      );
 }

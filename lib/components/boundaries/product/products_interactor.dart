@@ -24,7 +24,7 @@ class ProductsInteractor
       BehaviorSubject();
 
   @override
-  Stream<Iterable<ProductOutput>> observeProducts() =>
+  Stream<Iterable<ProductOutput>> get observeProducts =>
       _productsSubject.flatMap(_filterProducts);
 
   void loadProducts() {

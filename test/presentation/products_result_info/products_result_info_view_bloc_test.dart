@@ -13,8 +13,7 @@ void main() {
   setUp(() {
     _boundary = _ProductsOutputBoundaryContract();
     _countOfProductsSubject = BehaviorSubject();
-    when(_boundary.observeProducts())
-        .thenAnswer((_) => _countOfProductsSubject);
+    when(_boundary.observeProducts).thenAnswer((_) => _countOfProductsSubject);
     _bloc = ProductsResultInfoViewBloc(boundary: _boundary);
   });
 

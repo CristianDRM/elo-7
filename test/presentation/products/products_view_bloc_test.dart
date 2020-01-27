@@ -14,7 +14,7 @@ void main() {
   setUp(() {
     _boundary = _ProductsOutputBoundaryContract();
     _observeProducts = BehaviorSubject();
-    when(_boundary.observeProducts()).thenAnswer((_) => _observeProducts);
+    when(_boundary.observeProducts).thenAnswer((_) => _observeProducts);
     _bloc = ProductsViewBloc(boundary: _boundary);
   });
 

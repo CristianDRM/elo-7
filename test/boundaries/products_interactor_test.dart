@@ -20,7 +20,7 @@ void main() {
       _interactor.loadProducts();
 
       verify(_gateway.fetchProducts()).called(1);
-      await expectLater(_interactor.observeProducts(), emits([]));
+      await expectLater(_interactor.observeProducts, emits([]));
     });
     test('when fetchProducts return products then emits', () async {
       _givenProducts(_products);
@@ -28,7 +28,7 @@ void main() {
       _interactor.loadProducts();
 
       verify(_gateway.fetchProducts()).called(1);
-      await expectLater(_interactor.observeProducts(), emits(_productsMapped));
+      await expectLater(_interactor.observeProducts, emits(_productsMapped));
     });
   });
 
@@ -40,7 +40,7 @@ void main() {
       _interactor.filterByName('Foobar');
 
       verify(_gateway.fetchSearchProducts(text: 'Foobar')).called(1);
-      await expectLater(_interactor.observeProducts(), emits([]));
+      await expectLater(_interactor.observeProducts, emits([]));
     });
     test('when fetchSearchProducts return products then emits', () async {
       _givenSearchProducts(_products);
@@ -48,7 +48,7 @@ void main() {
       _interactor.filterByName('FooBar');
 
       verify(_gateway.fetchSearchProducts(text: 'FooBar')).called(1);
-      await expectLater(_interactor.observeProducts(), emits(_productsMapped));
+      await expectLater(_interactor.observeProducts, emits(_productsMapped));
     });
   });
 
@@ -60,7 +60,7 @@ void main() {
       _interactor.filterByCategory(CategoryProductFilter.promotion);
 
       await expectLater(
-        _interactor.observeProducts(),
+        _interactor.observeProducts,
         emitsInOrder([
           _productsMapped,
           [_withPromotion],
@@ -75,7 +75,7 @@ void main() {
       _interactor.filterByCategory(CategoryProductFilter.installment);
 
       await expectLater(
-        _interactor.observeProducts(),
+        _interactor.observeProducts,
         emitsInOrder([
           _productsMapped,
           [_withInstallment],
@@ -90,7 +90,7 @@ void main() {
       _interactor.filterByCategory(CategoryProductFilter.all);
 
       await expectLater(
-          _interactor.observeProducts(),
+          _interactor.observeProducts,
           emitsInOrder([
             _productsMapped,
             _productsMapped,
