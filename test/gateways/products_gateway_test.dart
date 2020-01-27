@@ -4,8 +4,6 @@ import 'package:http/http.dart';
 import 'package:http/testing.dart';
 import 'dart:convert';
 
-import 'package:mockito/mockito.dart';
-
 void main() {
   group('#fetchProducts', () {
     test('when status code is 200 then emits response body', () {
