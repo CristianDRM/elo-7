@@ -32,7 +32,7 @@ class ProductsInteractor
         .fetchProducts()
         .then((products) =>
             products.map((product) => ProductOutput.fromJson(product)))
-        .catchError((_) => [])
+        .catchError((_) => <ProductOutput>[])
         .then(_productsSubject.add);
   }
 
@@ -42,7 +42,7 @@ class ProductsInteractor
         .fetchSearchProducts(text: text)
         .then((products) =>
             products.map((product) => ProductOutput.fromJson(product)))
-        .catchError((_) => [])
+        .catchError((_) => <ProductOutput>[])
         .then(_productsSubject.add);
   }
 

@@ -26,6 +26,25 @@ class ProductOutput {
         link: json['_link'],
         picture: json['picture'],
       );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ProductOutput &&
+          runtimeType == other.runtimeType &&
+          price == other.price &&
+          title == other.title &&
+          id == other.id &&
+          link == other.link &&
+          picture == other.picture;
+
+  @override
+  int get hashCode =>
+      price.hashCode ^
+      title.hashCode ^
+      id.hashCode ^
+      link.hashCode ^
+      picture.hashCode;
 }
 
 class ProductPrice {
@@ -43,4 +62,17 @@ class ProductPrice {
         promotional: json['nonPromotional'],
         installment: json['installment'],
       );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ProductPrice &&
+          runtimeType == other.runtimeType &&
+          current == other.current &&
+          promotional == other.promotional &&
+          installment == other.installment;
+
+  @override
+  int get hashCode =>
+      current.hashCode ^ promotional.hashCode ^ installment.hashCode;
 }
