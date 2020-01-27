@@ -24,6 +24,7 @@ class LayoutTheme extends InheritedWidget {
   const LayoutTheme({@required Widget child}) : super(child: child);
   final EdgesScheme edges = const EdgesScheme();
   final ButtonScheme button = const ButtonScheme();
+  final ProductScheme product = const ProductScheme();
   final Elo7ColorScheme colors = const Elo7ColorScheme();
 
   @override
@@ -44,6 +45,11 @@ class EdgesScheme {
 class ButtonScheme {
   const ButtonScheme();
   final double height = 54;
+}
+
+class ProductScheme {
+  const ProductScheme();
+  final double imageHeight = 120;
 }
 
 class Elo7ColorScheme {

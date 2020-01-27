@@ -17,11 +17,13 @@ class ProductView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         SizedBox(
-          height: 120,
-          child: Image.network(
-            product.picture,
-            fit: BoxFit.cover,
-          ),
+          height: customTheme.product.imageHeight,
+          child: product.picture.isNotEmpty
+              ? Image.network(
+                  product.picture,
+                  fit: BoxFit.cover,
+                )
+              : Placeholder(),
         ),
         Text(
           product.title,

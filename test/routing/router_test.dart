@@ -37,13 +37,11 @@ class _NavigatorState extends NavigatorState {
   @override
   Future<T> pushNamed<T extends Object>(String routeName, {Object arguments}) {
     pushNamedCallback(routeName, arguments);
-    return super.pushNamed(routeName, arguments: arguments);
   }
 
   void Function(Route) pushCallback;
   @override
   Future<T> push<T extends Object>(Route<T> route) {
     pushCallback(route);
-    return super.push(route);
   }
 }
