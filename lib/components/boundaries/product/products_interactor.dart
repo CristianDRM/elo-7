@@ -29,7 +29,7 @@ class ProductsInteractor
 
   void loadProducts() {
     _gateway
-        .fetchSearchProducts()
+        .fetchProducts()
         .then((products) =>
             products.map((product) => ProductOutput.fromJson(product)))
         .catchError((_) => [])
@@ -44,10 +44,6 @@ class ProductsInteractor
             products.map((product) => ProductOutput.fromJson(product)))
         .catchError((_) => [])
         .then(_productsSubject.add);
-  }
-
-  void dispose() {
-    _productsSubject.close();
   }
 
   Stream<Iterable<ProductOutput>> _filterProducts(
@@ -73,4 +69,8 @@ class ProductsInteractor
   @override
   void filterByCategory(CategoryProductFilter category) =>
       _categorySubject.add(category);
+
+  void dispose() {
+    _productsSubject.close();
+  }
 }
