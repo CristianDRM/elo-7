@@ -1,0 +1,10 @@
+{
+    "try_again": "TENTAR NOVAMENTE",
+    "connection_error_title": "TENTAR NOVAMENTE",
+    "connection_error_content": "Por favor, verifique sua conexão de internet",
+    "category": "Categoria",
+    "products_summary": "{produtos} produtos encontrados",
+    "filter": "Filtrar",
+    "filter_by": "Filtrar por:",
+    "home": "Home"
+}

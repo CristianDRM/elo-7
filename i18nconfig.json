@@ -1,0 +1,12 @@
+{
+    "defaultLocale": "pt-BR",
+    "locales": [
+        "pt-BR"
+    ],
+    "localePath": "i18n",
+    "generatedPath": "lib/generated",
+    "ltr": [
+        "pt-BR"
+    ],
+    "rtl": []
+}
