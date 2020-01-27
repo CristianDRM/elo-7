@@ -1,16 +1,23 @@
-# elo_7
+# Elo7 App
 
-A new Flutter project.
+## Features
+- Listing products
+- Filter products by category and name
+- Handle availability(offline) state
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Stack
+- Dart
+- Flutter
 
-A few resources to get you started if this is your first Flutter project:
+## Running
+- Install the flutter framework in your machine. You can check the instructions here: [Flutter Install](https://flutter.dev/docs/get-started/install)
+- Clone this project.
+- Setup the devices and run in your terminal the following commands: 
+```
+flutter packages get
+flutter pub run build_runner build
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Thats it.
