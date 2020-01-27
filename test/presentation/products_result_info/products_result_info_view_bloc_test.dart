@@ -1,4 +1,3 @@
-import 'package:elo_7/components/boundaries/availability/availability_output_boundary_contract.dart';
 import 'package:elo_7/components/boundaries/product/products_output.dart';
 import 'package:elo_7/components/boundaries/product/products_output_boundary_contract.dart';
 import 'package:elo_7/components/presentation/products_result_info/products_result_info_view_bloc.dart';

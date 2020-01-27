@@ -11,13 +11,15 @@ class ProductsCategoryFilterViewBloc {
           CategoryProductFilter.installment: 'Parcelamento sem juros',
           CategoryProductFilter.promotion: 'Preços promocionais',
         },
-        _boundary = boundary;
+        _boundary = boundary {
+    onChangeCategory(_filters[CategoryProductFilter.all]);
+  }
   final ProductsFilterCategoryBoundaryContract _boundary;
   final Map<CategoryProductFilter, String> _filters;
   final BehaviorSubject<String> _selectedSubject = BehaviorSubject();
 
   void onChangeCategory(String value) {
-    CategoryProductFilter category = _filters.entries
+    final CategoryProductFilter category = _filters.entries
         .firstWhere(
           (entry) => entry.value == value,
           orElse: () => MapEntry(CategoryProductFilter.all, ''),
@@ -30,6 +32,5 @@ class ProductsCategoryFilterViewBloc {
   Iterable<String> filters() => CategoryProductFilter.values.map(
         (item) => _filters[item],
       );
-  Stream<String> get selectedItem =>
-      _selectedSubject.startWith(_filters[CategoryProductFilter.all]);
+  Stream<String> get selectedItem => _selectedSubject;
 }

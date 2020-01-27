@@ -16,6 +16,7 @@ void main() {
     );
     _bloc = ProductsSearchPageBloc(availabilityBoundary: _boundary);
   });
+
   test('#observeInternetAvailability', () {
     _givenAvailability(isConnected: true);
     expect(_bloc.observeInternetAvailability, emits(true));

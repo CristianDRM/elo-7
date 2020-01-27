@@ -25,4 +25,29 @@ class ProductViewModel {
   final String detailUrl;
   final bool hasDiscount;
   final bool hasInstallment;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ProductViewModel &&
+          runtimeType == other.runtimeType &&
+          title == other.title &&
+          installment == other.installment &&
+          price == other.price &&
+          picture == other.picture &&
+          priceWithDiscount == other.priceWithDiscount &&
+          detailUrl == other.detailUrl &&
+          hasDiscount == other.hasDiscount &&
+          hasInstallment == other.hasInstallment;
+
+  @override
+  int get hashCode =>
+      title.hashCode ^
+      installment.hashCode ^
+      price.hashCode ^
+      picture.hashCode ^
+      priceWithDiscount.hashCode ^
+      detailUrl.hashCode ^
+      hasDiscount.hashCode ^
+      hasInstallment.hashCode;
 }
