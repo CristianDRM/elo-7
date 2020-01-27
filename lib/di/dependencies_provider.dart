@@ -11,6 +11,7 @@ import 'package:elo_7/components/presentation/products_result_info/products_resu
 import 'package:elo_7/pages/products_search/products_search_page_bloc.dart';
 import 'package:elo_7/routing/router_contract.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import 'dependencies_provider_contract.dart';
 
@@ -22,7 +23,7 @@ class DependenciesProvider extends DependenciesProviderContract {
   final GlobalKey<NavigatorState> navigationKey;
   final RouterContract router;
 
-  final ProductsGatewayContract _gateway = ProductsGateway();
+  final ProductsGatewayContract _gateway = ProductsGateway(client: Client());
 
   @override
   Widget search(Widget child) {
